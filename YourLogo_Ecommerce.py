@@ -1,14 +1,14 @@
 import time
 from selenium import webdriver
 from selenium.webdriver import ActionChains
-from selenium.webdriver.support.select import Select
 
-#  Wait until an item fully loaded to perform next task as follow:
-#  search_box = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//input[@id='search']")))    reference: https://stackoverflow.com/questions/46455702/selenium-find-element-by-id-doesnt-work
+####################################################################
+#                   Proudly written by Vafa Abadi.
+#           LinkedIn: https://www.linkedin.com/in/vafaabadi/
+####################################################################
 
-driver = webdriver.Chrome(executable_path="C:\\Users\\Vafa\\AppData\\chromedriver_win32\\chromedriver.exe")
+driver = webdriver.Chrome(executable_path="C:\\Users\\Vafa\\chromedriver.exe")
 driver.get("http://automationpractice.com/index.php")
-
 action = ActionChains(driver)
 VisualizeButtons = driver.find_element_by_xpath("//ul[1]//li[7]//div[1]//div[1]//div[1]//a[1]//img[1]")
 action.move_to_element(VisualizeButtons).perform()
@@ -38,7 +38,7 @@ driver.find_element_by_xpath("//html//body//div//div//div//div//div//div//div//f
 driver.find_element_by_xpath("//html//body//div//div//div//div//div//div//div//form//div//div//input[@name='email']").send_keys("zirkhaki12@yahoo.com")
 #password
 driver.find_element_by_xpath("//input[@name='passwd']").click()
-driver.find_element_by_xpath("//input[@name='passwd']").send_keys("123456789123456789")
+driver.find_element_by_xpath("//input[@name='passwd']").send_keys("Asdf95jkl")
 time.sleep(3)
 driver.find_element_by_xpath("//body//form//p//span[1]").click()
 time.sleep(3)
@@ -53,12 +53,12 @@ CorrectColorAndSize = driver.find_element_by_xpath("//a[contains(text(),'Color :
 assert "Color : Green, Size : L" in CorrectColorAndSize
 #Total Price
 TotalPrice = str(driver.find_element_by_id("total_price").text)
-assert "$34.80" in TotalPrice
+assert "$36.19" in TotalPrice
 time.sleep(2)
 driver.find_element_by_xpath("//a[contains(text(),'Pay by bank wire')]").click()
 time.sleep(2)
-confirmTotal = str(driver.find_element_by_xpath("//p[contains(text(),'- The total amount of your order comes to:')]//span[contains(text(),'$34.80')]").text)
-assert "$34.80" in confirmTotal
+confirmTotal = str(driver.find_element_by_xpath("//p[contains(text(),'- The total amount of your order comes to:')]//span[contains(text(),'$36.19')]").text)
+assert "$36.19" in confirmTotal
 driver.find_element_by_xpath("//span[contains(text(),'I confirm my order')]").click()
 CompletionOfOrder = driver.find_element_by_xpath("//strong[contains(text(),'Your order on My Store is complete.')]").text
 assert "Your order on My Store is complete" in CompletionOfOrder
@@ -66,3 +66,8 @@ assert "Your order on My Store is complete" in CompletionOfOrder
 print("\nWell done! This automation test, YourLogo_Ecommerce, successfully passed.")
 
 
+
+
+
+#  Wait until an item fully loaded to perform next task as follow:
+#  search_box = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//input[@id='search']")))    reference: https://stackoverflow.com/questions/46455702/selenium-find-element-by-id-doesnt-work

@@ -3,10 +3,12 @@ from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.select import Select
 
-#  Wait until an item fully loaded to perform next task as follow:
-#  search_box = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//input[@id='search']")))    reference: https://stackoverflow.com/questions/46455702/selenium-find-element-by-id-doesnt-work
+####################################################################
+#                   Proudly written by Vafa Abadi.
+#           LinkedIn: https://www.linkedin.com/in/vafaabadi/
+####################################################################
 
-driver = webdriver.Chrome(executable_path="C:\\Users\\Vafa\\AppData\\chromedriver_win32\\chromedriver.exe")
+driver = webdriver.Chrome(executable_path="C:\\Users\\Vafa\\chromedriver.exe")
 driver.get("https://rahulshettyacademy.com/AutomationPractice/")
 
 driver.find_element_by_id("checkBoxOption1").click()
@@ -71,3 +73,8 @@ time.sleep(2)
 driver.find_element_by_xpath("//a[@class='blinkingText']").click()
 
 print("\nWell done! This automation test, PracticePage, successfully passed.")
+
+
+
+#  Wait until an item fully loaded to perform next task as follow:
+#  search_box = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//input[@id='search']")))    reference: https://stackoverflow.com/questions/46455702/selenium-find-element-by-id-doesnt-work

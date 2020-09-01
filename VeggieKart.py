@@ -1,12 +1,12 @@
 import time
-from select import select
 from selenium import webdriver
 
-#  Wait until an item fully loaded to perform next task as follow:
-#  search_box = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//input[@id='search']")))    reference: https://stackoverflow.com/questions/46455702/selenium-find-element-by-id-doesnt-work
-from selenium.webdriver import ActionChains
+####################################################################
+#                   Proudly written by Vafa Abadi.
+#           LinkedIn: https://www.linkedin.com/in/vafaabadi/
+####################################################################
 
-driver = webdriver.Chrome(executable_path="C:\\Users\\Vafa\\AppData\\chromedriver_win32\\chromedriver.exe")
+driver = webdriver.Chrome(executable_path="C:\\Users\\Vafa\\chromedriver.exe")
 driver.get("https://rahulshettyacademy.com/seleniumPractise/#/")
 #to add 3 kg of carrots to cart
 driver.find_element_by_xpath("//div[5]//div[2]//a[2]").click()
@@ -35,13 +35,8 @@ driver.find_element_by_xpath("//button[contains(text(),'Proceed')]").click()
 print("\nWell done! This automation test, VeggieKart, successfully passed.")
 
 
+#  Wait until an item fully loaded to perform next task as follow:
+#  search_box = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//input[@id='search']")))    reference: https://stackoverflow.com/questions/46455702/selenium-find-element-by-id-doesnt-work
 
 
 
-#products = select(driver.find_elements_by_css_selector("h4[class='product-name']").text)
-#print(products)
-#for product in products:
-#    if product == "Carrot - 1 Kg":
-#        driver.find_element_by_xpath("//div[5]//div[2]//a[2]").click()
-#    else product == 'Mashroon - 1 Kg':
-#        driver.find_element_by_xpath()

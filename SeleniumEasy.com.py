@@ -2,14 +2,13 @@ import time
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.select import Select
-from selenium.webdriver.chrome.options import Options
 
-#  Wait until an item fully loaded to perform next task as follow:
-#  search_box = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//input[@id='search']")))    reference: https://stackoverflow.com/questions/46455702/selenium-find-element-by-id-doesnt-work
+####################################################################
+#                   Proudly written by Vafa Abadi.
+#           LinkedIn: https://www.linkedin.com/in/vafaabadi/
+####################################################################
 
-
-driver = webdriver.Chrome(executable_path="C:\\Users\\Vafa\\AppData\\chromedriver_win32\\chromedriver.exe")
+driver = webdriver.Chrome(executable_path="C:\\Users\\Vafa\\chromedriver.exe")
 driver.get("https://www.seleniumeasy.com/test/")
 time.sleep(3)
 driver.find_element_by_id("details-button").click()
@@ -408,10 +407,10 @@ driver.find_element_by_xpath("//li[@class='tree-branch']//a[contains(text(),'Ale
 time.sleep(2)
 #file download
 driver.find_element_by_xpath("//html//body//div//div//div//div//div//ul//li//ul//li//ul//li//a[contains(text(),'File Download')]").click()
-time.sleep(2)
+time.sleep(3)
 #enter data box
-driver.find_elements_by_css_selector("//html//body//div//div//div//div//div//div//textarea").click()
-time.sleep(1)
+driver.find_element_by_xpath("//html//body//div//div//div//div//div//div//textarea").click()
+time.sleep(2)
 driver.find_element_by_xpath("//html//body//div//div//div//div//div//div//textarea").send_keys("test automation for file downlaod")
 driver.find_element_by_xpath("//button[contains(text(),'Generate File')]").click()
 time.sleep(1)
@@ -469,18 +468,18 @@ driver.find_element_by_xpath("//input[@placeholder='Search Attendees...']").clic
 driver.find_element_by_xpath("//input[@placeholder='Search Attendees...']").send_keys("Arman")
 time.sleep(2)
 #others
-driver.find_element_by_xpath("//html//body//div//div//div//div//div//ul//li//ul//li//a[contains(text(),'Others')]").click()
-time.sleep(2)
+#driver.find_element_by_xpath("//html//body//div//div//div//div//div//ul//li//ul//li//a[contains(text(),'Others')]").click()
+#time.sleep(2)
 #drag and drop
-driver.find_element_by_xpath("//html//body//div//div//div//div//div//ul//li//ul//li//ul//li//a[contains(text(),'Drag and Drop')]").click()
-time.sleep(2)
-drag = driver.find_element_by_xpath("//span[contains(text(),'Draggable 1')]")
-drop = driver.find_element_by_id("mydropzone")
-ActionChains(driver).click_and_hold(drag).move_to_element(drop).release(drop).perform()
+#driver.find_element_by_xpath("//html//body//div//div//div//div//div//ul//li//ul//li//ul//li//a[contains(text(),'Drag and Drop')]").click()
+#time.sleep(2)
+#drag = driver.find_element_by_xpath("//span[contains(text(),'Draggable 1')]")
+#drop = driver.find_element_by_id("mydropzone")
+#ActionChains(driver).click_and_hold(drag).move_to_element(drop).release(drop).perform()
 
+print("\nWell done! This automation test, SeleniumEasy, successfully passed.")
 
-
-
-
+#  Wait until an item fully loaded to perform next task as follow:
+#  search_box = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//input[@id='search']")))    reference: https://stackoverflow.com/questions/46455702/selenium-find-element-by-id-doesnt-work
 
 

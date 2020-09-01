@@ -1,10 +1,12 @@
 import time
 from selenium import webdriver
 
-#  Wait until an item fully loaded to perform next task as follow:
-#  search_box = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//input[@id='search']")))    reference: https://stackoverflow.com/questions/46455702/selenium-find-element-by-id-doesnt-work
+####################################################################
+#                   Proudly written by Vafa Abadi.
+#           LinkedIn: https://www.linkedin.com/in/vafaabadi/
+####################################################################
 
-driver = webdriver.Chrome(executable_path="C:\\Users\\Vafa\\AppData\\chromedriver_win32\\chromedriver.exe")
+driver = webdriver.Chrome(executable_path="C:\\Users\\Vafa\\chromedriver.exe")
 driver.get("https://www.phptravels.net/admin")
 
 driver.find_element_by_xpath("//form[@class='form-signin form-horizontal wow fadeIn animated animated']//input[@placeholder='Email']").send_keys("admin@phptravels.com")
@@ -79,3 +81,8 @@ time.sleep(2)
 ReservationConfirmed = str(driver.find_element_by_xpath("//h4[contains(text(),'Your booking status is Reserved')]").text)
 assert "is Reserved" in ReservationConfirmed
 print("\nWell done! This automation test, phptravels_backend, successfully passed.")
+
+
+
+#  Wait until an item fully loaded to perform next task as follow:
+#  search_box = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//input[@id='search']")))    reference: https://stackoverflow.com/questions/46455702/selenium-find-element-by-id-doesnt-work

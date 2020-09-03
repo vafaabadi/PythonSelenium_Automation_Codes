@@ -15,10 +15,15 @@ time.sleep(2)
 #highlighting all 3 "Add To Chart" buttons
 buttons = driver.find_elements_by_xpath("//div[@class='product']//div[3]//button")
 assert "3" in str(len(driver.find_elements_by_xpath("//div[@class='product']//div[3]//button")))
+
+#the full XPath address is //div[@class='product']//div[3]//button/parent::div/parent::div/h4
+list_one = []
 #adding all 3 fruits to the cart
 for button in buttons:
+    list_one.append(button.find_element_by_xpath("parent::div/parent::div/h4").text)    #pick name of fruits and add them to the list
     time.sleep(1)
     button.click()
+
 #backet image
 driver.find_element_by_xpath("//a[@class='cart-icon']//img[contains(@class,'')]").click()
 time.sleep(2)
@@ -32,6 +37,22 @@ time.sleep(3)
 #to check number of listed items
 No_of_Items = driver.find_elements_by_xpath("//table/tr")     #3 items listed but Selenium will return 4 because it is also counting the title
 assert "3" in str(len(driver.find_elements_by_xpath("//table/tr"))-1)
+
+list_two = []
+fruits_names = driver.find_elements_by_xpath("//table[@class='cartTable']/tr/td[2]/p")
+for fruits_name in fruits_names:
+    list_two.append(fruits_name.text)
+
+assert list_one == list_two             #to check the contents of both lists are same.
+
+#to observe the sum of the individual fruits is equal to the total amount shown on check out page.
+sum = 0
+amounts = driver.find_elements_by_xpath("//table[@class='cartTable']/tr/td[5]/p")
+for amount in amounts:
+    sum = sum + int(amount.text)
+print(sum)
+assert sum == int(driver.find_element_by_xpath("//span[@class='totAmt']").text)
+
 #to check total amount is 388
 assert "388" in str(driver.find_element_by_xpath("//span[@class='totAmt']").text)
 #applying discount code

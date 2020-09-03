@@ -6,12 +6,12 @@ Please find a short description regarding each automation code as follow:
 
 
 
-phptravels_backend: 
-This is a back-end journey where the user needs to log in to the back-end to creat a complete end to end journey for hotel reservation.
-
 Optimised_code_with_multiple_verifications: 
 This it the script where you find optimised and advanced automation code with multiple vefirications. The script covers 3 pages. 
 To observe script covering multiple pages (3< pages), please consider phptravels_backend/phptravels_backend_flights/Practice_Page.py/SeleniumEasy.com.
+
+phptravels_backend: 
+This is a back-end journey where the user needs to log in to the back-end to creat a complete end to end journey for hotel reservation.
 
 phptravels_backend_flights: 
 This is a back-end journey where the user needs to log in to the back-end to creat a complete end to end journey for flight reservation.

@@ -2,7 +2,7 @@ import time
 from selenium import webdriver
 
 ####################################################################
-#                   cd ..Proudly written by Vafa Abadi.
+#                   Proudly written by Vafa Abadi.
 #           LinkedIn: https://www.linkedin.com/in/vafaabadi/
 ####################################################################
 
@@ -71,7 +71,7 @@ driver.find_element_by_xpath("//option[contains(text(),'Iceland')]").click()
 driver.find_element_by_class_name("chkAgree").click()
 driver.find_element_by_xpath("//button[contains(text(),'Proceed')]").click()
 
-print("\nWell done! This automation test, VeggieKart_Alternative, successfully passed.")
+print("\nWell done! This automation test, Optimised_codes_with_multiple_validations, successfully passed.")
 
 
 
